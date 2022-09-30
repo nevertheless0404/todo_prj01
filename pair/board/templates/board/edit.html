@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form action="{% url 'board:update' review.id%}">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">제목</label>
+    <input type="text" class="form-control" id="" name="title" value="{{review.title}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+    <textarea class="form-control" type="text" id="" name="content" rows="3">{{review.content}}</textarea>
+  </div>
+  <div class="input-group flex-nowrap ">
+    <input type="submit" value="리뷰 수정" class="btn btn-primary form-control border-primary text-light"
+      placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+  </div>
+</form>
+{% endblock %}

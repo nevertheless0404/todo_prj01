@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for re in review %}
+<h3>제목 : {{re.title}}</h3>
+<span>{{re.content}}</span>
+<p class="mb-2 mt-2"><a href=" {% url 'board:edit' re.id %}">리뷰 수정</a>
+  <a href="{% url 'board:delete' re.id%}">리뷰 삭제</a>
+</p>
+{% endfor %}
+{% endblock %}
